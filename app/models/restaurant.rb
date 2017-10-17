@@ -9,7 +9,10 @@ class Restaurant < ApplicationRecord
   end
 
   def add_multiple_values(attributes)
-    update_attributes(attributes) 
+    update_attributes(attributes)
   end
+
+  validates :name, presence: true,
+                    length: { minimum: 5 }
 
 end
