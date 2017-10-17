@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
    root 'welcome#index'
-   resources :restaurants
+   resources :restaurants do
+     resources :comments
+   end
 
 
   get 'static_pages/home'

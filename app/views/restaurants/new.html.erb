@@ -1,39 +1,23 @@
-<h1> New Restaurant </h1>
+<html>
+<head>
+  <title>Jelpy</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<body>
 
-<%= form_with scope: :restaurant, url: restaurants_path, local: true do |form| %>
+  <div class="container-fluid">
 
-  <% if @restaurant.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@restaurant.errors.count, "error") %> prohibited
-        this restaurant from being saved:
-      </h2>
-      <ul>
-        <% @restaurant.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <h1> New Restaurant </h1>
 
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
+    <%= render 'form'%><br>
 
-  <p>
-    <%= form.label :location %><br>
-    <%= form.text_field :location %>
-  </p>
+    <%= link_to 'Back', restaurants_path %>
 
-  <p>
-    <%= form.label :description %><br>
-    <%= form.text_area :description %>
-  </p>
+  </div>
 
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
-<%= link_to 'Back', restaurants_path %>
+  </body>
+</html>
