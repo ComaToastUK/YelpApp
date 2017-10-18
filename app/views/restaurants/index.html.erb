@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>Jelpy</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container-fluid">
+
+    <h1>List of restaurants</h1>
+
+    <%= link_to 'New restaurant', new_restaurant_path %>
+
+      <table class="table">
+        <tr>
+          <th>Restaurant Name</th>
+          <th>Location</th>
+          <th colspan="4"></th>
+        </tr>
+      </div>
+        <% @restaurants.each do |restaurant| %>
+          <tr>
+            <td><%= restaurant.name %></td>
+            <td><%= restaurant.location %></td>
+            <td><%= link_to 'Show', restaurant_path(restaurant) %></td>
+            <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
+            <td><%= link_to 'Destroy', restaurant_path(restaurant),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+    </table>
+  </div>
+</body>
+</html>

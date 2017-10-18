@@ -1,22 +1,14 @@
-<h1> New Restaurant </h1>
+<html>
+<head>
+  <title>Jelpy</title>
+</head>
+  <body>
+    <div class="container-fluid">
+        <h1> New Restaurant </h1>
 
-<%= form_with scope: :restaurant, url: restaurants_path, local: true do |form| %>
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :text %>
-  </p>
+        <%= render 'form'%><br>
 
-  <p>
-    <%= form.label :location %><br>
-    <%= form.text_field :text %>
-  </p>
-
-  <p>
-    <%= form.label :description %><br>
-    <%= form.text_area :text %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+        <%= link_to 'Back', restaurants_path %>
+    </div>
+  </body>
+</html>

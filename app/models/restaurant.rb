@@ -1,15 +1,8 @@
 class Restaurant < ApplicationRecord
 
-  def edit_single_value(name, value)
-    update_attribute(name, value)
-  end
-
-  def edit_multiple_values(attributes)
-    update_attributes(attributes)
-  end
-
-  def add_multiple_values(attributes)
-    update_attributes(attributes) 
-  end
+  has_many :comments, dependent: :destroy
+  validates :name, presence: true, length: { minimum: 5 }
+  validates :location, presence: true, length: {minimum: 5}
+  validates :description, presence: true, length: {minimum: 5}
 
 end
